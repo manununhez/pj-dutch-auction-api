@@ -3,6 +3,8 @@ const { google } = require('googleapis');
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
+const request = require('request');
+
 dotenv.config();
 
 const port = process.env.PORT || 5000;
@@ -18,7 +20,67 @@ app.use((req, res, next) => {
 // console.log that your server is up and running
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
-// create a GET route to fetch data from Sheets!
+/**
+ * GET to retrieve list of hotels
+ */
+app.get("/hotels", function (req, response) {
+    let hotels_URL = process.env.REACT_APP_HOTELS_SOURCE
+    let options = {json: true};
+
+    request(hotels_URL, options, (error, res, body) => {
+        if (error) {
+            return  console.log(error)
+        };
+    
+        if (!error && res.statusCode == 200) {
+            // do something with JSON, using the 'body' variable
+            response.json(body)
+        };
+    });
+});
+
+
+/**
+ * GET to retrieve list of hotels for tutorial
+ */
+app.get("/hotels-tutorial", function (req, response) {
+    let hotels_URL = process.env.REACT_APP_HOTELS_TUTORIAL_SOURCE
+    let options = {json: true};
+
+    request(hotels_URL, options, (error, res, body) => {
+        if (error) {
+            return  console.log(error)
+        };
+    
+        if (!error && res.statusCode == 200) {
+            // do something with JSON, using the 'body' variable
+            response.json(body)
+        };
+    });
+});
+
+/**
+ * GET to retrieve list of hotels in reverseMode
+ */
+app.get("/hotels-rev", function (req, response) {
+    let hotels_URL = process.env.REACT_APP_HOTELS_REV_SOURCE
+    let options = {json: true};
+
+    request(hotels_URL, options, (error, res, body) => {
+        if (error) {
+            return  console.log(error)
+        };
+    
+        if (!error && res.statusCode == 200) {
+            // do something with JSON, using the 'body' variable
+            response.json(body)
+        };
+    });
+});
+
+/**
+ * create a GET route to fetch data from Sheets!
+ */
 app.get("/v4-get", function (req, res) {
     console.log(req.query.spreadSheetName)
     let spreadSheetName = req.query.spreadSheetName;
@@ -54,24 +116,16 @@ app.get("/v4-get", function (req, res) {
         }, function (err, response) {
             if (err) return console.log('The API returned an error: ' + err);
             const rows = response.data.values;
-            // if (rows.length) {
-            //     console.log('Name, Major:');
-            //     // Print columns A and E, which correspond to indices 0 and 4.
-            //     rows.map((row) => {
-            //         console.log(`${row[0]}, ${row[4]}`);
-            //     });
-            // } else {
-            //     console.log('No data found.');
-            // }
 
-            // (3) Setting data for daily tracking
-
-            // (4) Rendering the page and passing the rows data in
             res.json({ rows: rows })
         });
     }
 });
+ 
 
+/**
+ * POST to save data to GSheet
+ */
 app.post("/v4-post", function (req, res) {
     console.log(req.body)
     let spreadSheetName = req.body.spreadSheetName;
@@ -119,41 +173,11 @@ app.post("/v4-post", function (req, res) {
             auth: jwtClient
         };
 
-        
-        // const valueRangeBody = {
-        //     'majorDimension': 'ROWS', //log each entry as a new row (vs column)
-        //     'values': submissionValues //convert the object's values to an array
-        // };
-
-        // const params = {
-        //     // The ID of the spreadsheet to update.
-        //     // spreadsheetId: spreadsheetId,
-        //     // // The A1 notation of a range to search for a logical table of data.Values will be appended after the last row of the table.
-        //     // range: spreadSheetName + '!' + column + ':' + row, //this is the default spreadsheet name, so unless you've changed it, or are submitting to multiple sheets, you can leave this
-        //     // How the input data should be interpreted.
-        //     // valueInputOption: 'RAW', //RAW = if no conversion or formatting of submitted data is needed. Otherwise USER_ENTERED
-        //     // How the input data should be inserted.
-        //     insertDataOption: 'INSERT_ROWS', //Choose OVERWRITE OR INSERT_ROWS
-        // };
-
-
+ 
         let sheets = google.sheets('v4');
         sheets.spreadsheets.values.append(request, function (err, response) {
                 if (err) return console.log('The API returned an error: ' + err);
-                // const rows = response.data.values;
-                // if (rows.length) {
-                //     console.log('Name, Major:');
-                //     // Print columns A and E, which correspond to indices 0 and 4.
-                //     rows.map((row) => {
-                //         console.log(`${row[0]}, ${row[4]}`);
-                //     });
-                // } else {
-                //     console.log('No data found.');
-                // }
 
-                // (3) Setting data for daily tracking
-
-                // (4) Rendering the page and passing the rows data in
                 res.json("OK")
             });
     }
