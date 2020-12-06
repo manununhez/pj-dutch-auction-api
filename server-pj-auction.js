@@ -3,7 +3,7 @@ const { google } = require('googleapis');
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
-const request = require('request');
+const fetch = require('node-fetch');
 
 dotenv.config();
 
@@ -25,18 +25,10 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
  */
 app.get("/hotels", function (req, response) {
     let hotels_URL = process.env.REACT_APP_HOTELS_SOURCE
-    let options = {json: true};
 
-    request(hotels_URL, options, (error, res, body) => {
-        if (error) {
-            return  console.log(error)
-        };
-    
-        if (!error && res.statusCode == 200) {
-            // do something with JSON, using the 'body' variable
-            response.json(body)
-        };
-    });
+    fetch(hotels_URL)
+    .then(res => res.json())
+    .then(json => response.json(json));
 });
 
 
@@ -45,18 +37,11 @@ app.get("/hotels", function (req, response) {
  */
 app.get("/hotels-tutorial", function (req, response) {
     let hotels_URL = process.env.REACT_APP_HOTELS_TUTORIAL_SOURCE
-    let options = {json: true};
 
-    request(hotels_URL, options, (error, res, body) => {
-        if (error) {
-            return  console.log(error)
-        };
-    
-        if (!error && res.statusCode == 200) {
-            // do something with JSON, using the 'body' variable
-            response.json(body)
-        };
-    });
+    fetch(hotels_URL)
+    .then(res => res.json())
+    .then(json => response.json(json));
+
 });
 
 /**
@@ -64,18 +49,10 @@ app.get("/hotels-tutorial", function (req, response) {
  */
 app.get("/hotels-rev", function (req, response) {
     let hotels_URL = process.env.REACT_APP_HOTELS_REV_SOURCE
-    let options = {json: true};
 
-    request(hotels_URL, options, (error, res, body) => {
-        if (error) {
-            return  console.log(error)
-        };
-    
-        if (!error && res.statusCode == 200) {
-            // do something with JSON, using the 'body' variable
-            response.json(body)
-        };
-    });
+    fetch(hotels_URL)
+    .then(res => res.json())
+    .then(json => response.json(json));
 });
 
 /**
