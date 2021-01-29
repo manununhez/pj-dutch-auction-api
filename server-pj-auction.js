@@ -91,50 +91,6 @@ app.get("/hotels-rev", function (req, response) {
         });
 });
 
-/**
- * create a GET route to fetch data from Sheets!
- */
-app.get("/v4-get", function (req, res) {
-    console.log(req.query.spreadSheetName)
-    let spreadSheetName = req.query.spreadSheetName;
-    let column = req.query.column;
-    let row = req.query.row;
-    // Authorization
-    // configure a JWT auth client
-    let jwtClient = new google.auth.JWT(process.env.REACT_APP_CLIENT_EMAIL, null,
-        process.env.REACT_APP_PRIVATE_KEY.replace(/\\n/gm, '\n'),
-        [process.env.REACT_APP_GSHEET_SCOPE]);
-    //authenticate request
-    jwtClient.authorize(function (err, tokens) {
-        if (err) {
-            console.log(err);
-            return;
-        } else {
-            console.log("Successfully connected!");
-
-            datapull(jwtClient, spreadSheetName, column, row);
-        }
-    });
-
-    function datapull(jwtClient, spreadSheetName, column, row) {
-        //Google Sheets API
-        let spreadsheetId = process.env.REACT_APP_GSHEET_SPREADSHEET_ID;
-        console.log(spreadsheetId)
-        let sheetName = spreadSheetName + '!' + column + ":" + row;
-        let sheets = google.sheets('v4');
-        sheets.spreadsheets.values.get({
-            auth: jwtClient,
-            spreadsheetId: spreadsheetId,
-            range: sheetName
-        }, function (err, response) {
-            if (err) return console.log('The API returned an error: ' + err);
-            const rows = response.data.values;
-
-            res.json({ rows: rows })
-        });
-    }
-});
-
 
 /**
  * POST to save data to GSheet
