@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 const fetch = require('node-fetch');
+const db = require('./queries')
 
 dotenv.config();
 
@@ -20,6 +21,13 @@ app.use((req, res, next) => {
 // console.log that your server is up and running
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
+
+app.get('/userexpcount', db.getUserExperimentCount)
+app.get('/screens', db.getScreens)
+app.get('/versions', db.getVersions)
+app.get('/psform/:sex', db.getPSFormData)
+app.get('/apptext/:sex', db.getAppTextData)
+app.get('/navscreens/:version', db.getNavScreens)
 /**
  * GET to retrieve list of hotels
  */
