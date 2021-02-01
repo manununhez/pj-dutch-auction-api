@@ -148,7 +148,13 @@ app.get("/hotels-rev", function (req, response) {
     //     });
 });
 
-
+app.post("/savepsform", db.createPSForm);
+app.post("/saveauctionbids", db.createAuctionBids);
+app.post("/savevisualpattern", db.createVisualPattern);
+app.post("/saveuserform", db.createUserForm);
+app.post("/saveuserinfo", db.createUserInfo);
+app.post("/saveuserlogtime", db.createUserLogTime);
+app.post("/saveusergeneraldata", db.createUserGeneraldata);
 /**
  * POST to save data to GSheet
  */
