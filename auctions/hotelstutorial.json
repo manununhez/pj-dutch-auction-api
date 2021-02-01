@@ -1,0 +1,24 @@
+{
+  "1": {
+      "priceStart": 640,
+      "auctionLength": 8000,
+      "hotelName": "Hotel Crikvenica",
+      "hotelDescription": "Hotel Crikvenica oferuje zakwaterowanie w Crikvenicy, zaledwie kilka kroków od plaży. Do dyspozycji Gości jest tu restauracja i spa. Na miejscu można także korzystać z bezpłatnego WiFi. Wszystkie pokoje wyposażone są w klimatyzację oraz telewizor z płaskim ekranem i dostępem do kanałów satelitarnych. Z niektórych z nich roztacza się widok na morze lub miasto."
+      },
+    
+  "2": {
+      "priceStart": 730,
+      "auctionLength": 2000,
+      "hotelName": "Beach Hotel Bozikovina",
+      "hotelDescription": "Hotel ten usytuowany jest bezpośrednio przy plaży w miejscowości Podstrana na wybrzeżu Dalmacji. Oferuje on zakwaterowanie w klimatyzowanych pokojach z balkonem, telewizorem LCD z dostępem do kanałów telewizji satelitarnej i odtwarzaczem DVD. Łazienki wyposażone są w suszarkę do włosów. Goście mogą rozpocząć dzień od śniadania, które serwowane jest w barze hotelu Bozikovina, a następnie zażyć kąpieli w odkrytym basenie."
+  },
+  
+  "3": {
+      "priceStart": 570,
+      "auctionLength": 4000,
+      "hotelName": "Villa Ana Trogir",
+      "hotelDescription": "Obiekt Villa Ana Trogir położony jest w malowniczej wiosce Seget Donji, zaledwie 100 metrów od plaży. Oferuje on widoki na Morze Adriatyckie, odkryty basen oraz usytuowaną na świeżym powietrzu wannę z hydromasażem.<br><br>Wszystkie pokoje i apartamenty są klimatyzowane. Dysponują one telewizorem, lodówką oraz łazienką z suszarką do włosów. W restauracji obiektu Villa Ana, z której roztacza się widok na morze, jest podawane obfite i urozmaicone śniadanie w formie bufetu."
+  }   
+}
+  
+  

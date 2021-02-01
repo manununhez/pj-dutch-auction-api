@@ -1,0 +1,213 @@
+{
+  "1": {
+      "priceStart": 660,
+      "auctionLength": 2500,
+      "hotelName": "Hotel San Antonio",
+      "hotelDescription": "Hotel San Antonio jest położony przy plaży w miejscowości Podstrana. Na górnym piętrze budynku znajduje się basen z widokiem na Adriatyk. We wszystkich pomieszczeniach zapewniono WiFi.<br><br>Pokoje oraz apartamenty są przestronne i klimatyzowane. Dysponują one balkonem z bezpośrednim widokiem na morze. W każdym pokoju i apartamencie znajduje się telewizor z płaskim ekranem oraz wyłożona marmurem łazienka z wanną lub prysznicem."
+      },
+    
+  "2": {
+      "priceStart": 800,
+      "auctionLength": 4000,
+      "hotelName": "Park Plaza Belvedere Medulin",
+      "hotelDescription": "Odnowiony w 2014 roku hotel Park Plaza Belvedere znajduje się zaledwie kilka kroków od plaży. Obiekt ten oferuje stylizowane wnętrza oraz bezpłatny bezprzewodowy dostęp do Internetu w całym budynku. Do dyspozycji Gości jest także restauracja z tarasem, 2 odkryte baseny, spa i centrum odnowy biologicznej. Wszystkie pokoje są klimatyzowane i wyposażone zostały w minibar, sejf oraz telewizor LCD."
+  },
+  
+  "3": {
+      "priceStart": 780,
+      "auctionLength": 2000,
+      "hotelName": "Bluesun Hotel Elaphusa",
+      "hotelDescription": "Bluesun Hotel Elaphusa dysponuje największym centrum fitness i odnowy biologicznej na wyspie Brač, jak też 26 ziemnymi kortami tenisowymi i kręgielnią. Obiekt usytuowany jest zaledwie 50 metrów od morza oraz kilka minut spacerem od słynnej plaży Zlatni Rat.<br><br>Na miejscu znajduje się kryty i odkryty basen, mały basen dla dzieci oraz taras słoneczny. Do dyspozycji Gości jest także tepidarium z podgrzewaną wodą, ceramicznymi łóżkami i barem koktajlowym."
+  },
+    
+  "4": {
+      "priceStart": 810,
+      "auctionLength": 3000,
+      "hotelName": "Hotel Gala Split",
+      "hotelDescription": "Hotel Gala Split usytuowany jest w odległości 30 metrów od Morza Adriatyckiego w miejscowości Podstrana, a jego Goście mają do dyspozycji prywatną kamienistą plażę oraz bezpłatne WiFi we wszystkich pomieszczeniach.<br><br>Pokoje w hotelu Gala Split są klimatyzowane i dysponują balkonem oraz łazienką z kabiną prysznicową i suszarką do włosów. Obfite śniadanie w formie bufetu serwowane jest codziennie rano w hotelu San Antonio, oddalonym od obiektu o 20 metrów."
+  },
+    
+  "5": {
+      "priceStart": 660,
+      "auctionLength": 3500,
+      "hotelName": "Hotel Mlini",
+      "hotelDescription": "Hotel Mlini położony jest przy plaży w miejscowości Mlini i jest częścią oddalonego o kilka minut spacerem kompleksu Astarea-Mlini z krytym i odkrytym basenem. Hotel oferuje zakwaterowanie w klimatyzowanych pokojach, które urządzono w eleganckim stylu. Goście mogą korzystać z bezpłatnego WiFi. Z okien roztacza się widok na morze i pobliskie wyspy. Pokoje i apartamenty są nowocześnie urządzone i wyposażone w telewizor z płaskim ekranem i dostępem do kanałów satelitarnych."
+  },
+    
+  "6": {
+      "priceStart": 710,
+      "auctionLength": 5500,
+      "hotelName": "Premium Apartments Srebreno",
+      "hotelDescription": "Obiekt Premium Apartments Srebreno jest zlokalizowany w miejscowości Srebreno, 1 km od miejscowości Mlini. Oferuje on nowocześnie urządzone apartamenty z umeblowanym balkonem i zapewnia bezpłatne WiFi oraz bezpłatny parking w garażu. W każdym apartamencie Goście mają do dyspozycji doskonale wyposażoną kuchnię z jadalnią oraz część wypoczynkową, w której umieszczono telewizor z płaskim ekranem."
+  },   
+    
+  "7": {
+      "priceStart": 770,
+      "auctionLength": 5000,
+      "hotelName": "Hotel Split",
+      "hotelDescription": "Ten czterogwiazdkowy hotel usytuowany jest przy plaży i dysponuje biurem podróży, wypożyczalnią łodzi oraz odkrytym basenem na dachu z widokiem na wioskę rybacką Stobreč. Do dyspozycji Gości jest również centrum fitness i gabinet masażu. Wszystkie pokoje oferują bezpłatny bezprzewodowy dostęp do Internetu, a ich wyposażenie obejmuje klimatyzację i telewizor z dostępem do kanałów telewizji kablowej."
+  },
+    
+  "8": {
+      "priceStart": 570,
+      "auctionLength": 6500,
+      "hotelName": "Apartments Belvedere",
+      "hotelDescription": "Mieszczące się w typowo dalmackim budynku z białego kamienia apartamenty Belvedere oferują zakwaterowanie z wyżywieniem we własnym zakresie na wyspie Brac. Położone naprzeciwko plaży apartamenty mają balkony z pięknymi widokami na Morze Adriatyckie. Przestronne apartamenty dysponują kuchnią z zestawem do parzenia kawy i herbaty, kuchenką mikrofalową i lodówką."
+  },
+    
+ "9": {
+      "priceStart": 560,
+      "auctionLength": 4500,
+      "hotelName": "Beach Hotel Bozikovina",
+      "hotelDescription": "Hotel ten usytuowany jest bezpośrednio przy plaży w miejscowości Podstrana na wybrzeżu Dalmacji. Oferuje on zakwaterowanie w klimatyzowanych pokojach z balkonem, telewizorem LCD z dostępem do kanałów telewizji satelitarnej i odtwarzaczem DVD. Łazienki wyposażone są w suszarkę do włosów. Goście mogą rozpocząć dzień od śniadania, które serwowane jest w barze hotelu Bozikovina."
+  },
+    
+ "10": {
+      "priceStart": 670,
+      "auctionLength": 6000,
+      "hotelName": "House Racic",
+      "hotelDescription": "Obiekt House Racic zlokalizowany jest w centrum miejscowości Bol, 30 metrów od najbliższej kamienistej plaży. Oferuje on apartamenty z widokiem na morze. Dojazd samochodem do portu lotniczego Brač zajmuje zaledwie 15 minut.<br><br>Wszystkie apartamenty są klimatyzowane i dysponują tarasem, łazienką i telewizorem z płaskim ekranem. Goście mogą bezpłatnie korzystać z WiFi. W apartamentach znajduje się również kuchnia ze stołem."
+  }, 
+    
+ "11": {
+      "priceStart": 620,
+      "auctionLength": 9000,
+      "hotelName": "Sea Pearl",
+      "hotelDescription": "Obiekt Sea Pearl oferuje klimatyzowane apartamenty w miejscowości Bol, 100 metrów od przystani promowej i 200 metrów od promenady. W całym obiekcie można korzystać z bezpłatnego WiFi. W każdym apartamencie mieści się jadalnia oraz część wypoczynkowa z telewizorem z płaskim ekranem. Goście mają też do dyspozycji kuchnię wyposażoną w kuchenkę mikrofalową, lodówkę i płytę kuchenną. W prywatnej łazience znajduje się suszarka do włosów. Pościel jest zapewniona."
+  }, 
+
+ "12": {
+      "priceStart": 620,
+      "auctionLength": 7500,
+      "hotelName": "Villa Amigo",
+      "hotelDescription": "Pensjonat Villa Amigo położony jest zaledwie kilka kroków od plaży w miejscowości Podstrana. Oferuje on zakwaterowanie w klimatyzowanych pokojach i apartamentach z bezpłatnym WiFi. Na miejscu do dyspozycji Gości jest restauracja z tarasem, z którego roztacza się panoramiczny widok na Morze Adriatyckie. Wszystkie pokoje i apartamenty w obiekcie Villa Amigo wyposażone są w telewizor z płaskim ekranem i dostępem do kanałów satelitarnych."
+  }, 
+
+ "13": {
+      "priceStart": 740,
+      "auctionLength": 8500,
+      "hotelName": "Apartments Johnny",
+      "hotelDescription": "Obiekt ten usytuowany jest w miasteczku Podstrana w Dalmacji, w odległości 7 km od Splitu. Goście mają do dyspozycji pokoje i apartamenty z bezpłatnym WiFi oraz dużym balkonem z widokiem na zatokę i wyspę Brac.<br><br>Wszystkie apartamenty i pokoje są klimatyzowane oraz wyposażone zostały w telewizor z dostępem do kanałów satelitarnych, biurko i zestaw do parzenia kawy i herbaty."
+  }, 
+    
+ "14": {
+      "priceStart": 780,
+      "auctionLength": 8000,
+      "hotelName": "Apartments Villa Made 4U",
+      "hotelDescription": "Obiekt Apartments Villa Made 4U położony jest w miejscowości Mlini. Oferuje on odkryty basen z leżakami oraz przestronne apartamenty z tarasem i widokiem na morze. Na miejscu znajduje się bezpłatny prywatny parking. Apartamenty są nowocześnie urządzone i obejmują część wypoczynkową oraz jadalnię. Każdy z nich zapewnia w pełni wyposażoną kuchnię, telewizor z płaskim ekranem i dostępem do kanałów satelitarnych oraz meble ogrodowe."
+  }, 
+
+ "15": {
+      "priceStart": 580,
+      "auctionLength": 7000,
+      "hotelName": "Apartments Grbic",
+      "hotelDescription": "Położony zaledwie 150 metrów od plaży w Mlini ośrodek Aparments Grbic oferuje klimatyzowane apartamenty. Obiekt ten dysponuje ogrodem i tarasem ze sprzętem do grillowania. Do dyspozycji Gości jest bezpłatny bezprzewodowy dostęp do Internetu oraz bezpłatny parking. Wszystkie apartamenty wyposażone są w telewizję satelitarną, jadalnię oraz aneks kuchenny lub w pełni wyposażoną kuchnię. Niektóre z nich wychodzą na balkon z widokiem na Adriatyk. W części pokoi dostępna jest także część wypoczynkowa."
+  },
+    
+ "16": {
+      "priceStart": 760,
+      "auctionLength": 10500,
+      "hotelName": "Villa Kozina",
+      "hotelDescription": "Obiekt Villa Kozina jest położony w miejscowości Podstrana, 700 metrów od rezydencji rodu Cindro. Oferuje on apartamenty z bezpłatnym WiFi i telewizorem z płaskim ekranem. Do dyspozycji Gości jest sauna. Apartamenty obejmują część wypoczynkową, w pełni wyposażoną kuchnię ze zmywarką, piekarnikiem, tosterem, lodówką, płytą kuchenną i czajnikiem. Obiekt oferuje odkryty basen."
+  },
+    
+ "17": {
+      "priceStart": 810,
+      "auctionLength": 9500,
+      "hotelName": "Apartments Azalea",
+      "hotelDescription": "Obiekt Apartments Azalea zlokalizowany jest w miejscowości Podstrana. Oferuje on odkryty basen o powierzchni 50 m² i ogród. Plaża oddalona jest od apartamentów o 460 metrów. We wszystkich pomieszczeniach można bezpłatnie korzystać z WiFi. Każdy apartament obejmuje jadalnię, część wypoczynkową z telewizorem z płaskim ekranem i dostępem do kanałów satelitarnych, kuchnię z piekarnikiem, lodówką, ekspresem do kawy, czajnikiem i tosterem, a także łazienkę z wanną lub prysznicem."
+  },
+    
+ "18": {
+      "priceStart": 810,
+      "auctionLength": 11000,
+      "hotelName": "One Suite Hotel",
+      "hotelDescription": "Obiekt One Suite Hotel znajduje się 300 metrów od najbliższej plaży w miejscowości Srebreno oraz 7 km od Dubrownika. Oferuje on zakwaterowanie z odkrytym basenem, tarasem słonecznym, barem oraz restauracją. Goście mogą korzystać z bezpłatnego WiFi oraz płatnego, prywatnego parkingu. Wszystkie pokoje, studia oraz apartamenty są nowocześnie urządzone i dysponują balkonem."
+  },    
+    
+ "19": {
+      "priceStart": 780,
+      "auctionLength": 10000,
+      "hotelName": "Apartments Villa Capitano",
+      "hotelDescription": "Obiekt Apartments Villa Capitano jest położony w miejscowości Mlini, 12 km od Dubrownika. Na miejscu do dyspozycji Gości jest odkryty basen z leżakami, parasolami i widokiem na morze. Obiekt oferuje zakwaterowanie w klimatyzowanych apartamentach.<br><br>Wszystkie apartamenty obejmują telewizor z płaskim ekranem i dostępem do kanałów satelitarnych oraz umeblowany balkon lub taras. Do dyspozycji Gości jest również jadalnia oraz w pełni wyposażona kuchnia z piekarnikiem i zmywarką do naczyń."
+  },  
+    
+ "20": {
+      "priceStart": 760,
+      "auctionLength": 11500,
+      "hotelName": "Apartments and Rooms Azzurra",
+      "hotelDescription": "Obiekt Apartments Azzurra, z którego roztacza się panoramiczny widok na morze, oddaje do dyspozycji Gości luksusowe pokoje i apartamenty bez wyżywienia. Apartamenty oferują bezpłatne WiFi i dysponują tarasem z miejscami do siedzenia na świeżym powietrzu.<br><br>Pokoje i apartamenty są nowocześnie urządzone i dysponują częścią wypoczynkową z telewizorem z dostępem do kanałów satelitarnych. Apartamenty obejmują również jadalnię oraz w pełni wyposażoną kuchnię ze zmywarką do naczyń."
+  },
+    
+ "21": {
+      "priceStart": 630,
+      "auctionLength": 13000,
+      "hotelName": "Sunset Apartments",
+      "hotelDescription": "Obiekt Sunset Apartments zapewnia apartamenty z własnym wyżywieniem usytuowane zaledwie 50 metrów od plaży w miejscowości Podstrana, 8 km na południe od Splitu. Obiekt oferuje klimatyzowane apartamenty z jadalnią oraz częścią wypoczynkową z telewizorem z płaskim ekranem. Goście mają również dostęp do kuchni ze zmywarką do naczyń i kuchenką mikrofalową. Każdy apartament mieści łazienkę z bezpłatnym zestawem kosmetyków i suszarką do włosów."
+  },    
+    
+ "22": {
+      "priceStart": 620,
+      "auctionLength": 14000,
+      "hotelName": "Tamara Bol Apartments",
+      "hotelDescription": "Obiekt Apartments Tamara Bol oferuje bezpłatne WiFi, klimatyzację i bezpłatny parking. Znajduje się on w miasteczku Bol, 1 km od promenady.<br><br>Do dyspozycji Gości są pełne naturalnego światła apartamenty z częścią wypoczynkową z telewizorem z płaskim ekranem i dostępem do kanałów satelitarnych oraz odtwarzaczem DVD. W każdym z nich mieści się także jadalnia oraz kuchnia wyposażona w przybory kuchenne, płytę grzejną i ekspres do kawy."
+  },    
+
+ "23": {
+      "priceStart": 680,
+      "auctionLength": 12000,
+      "hotelName": "Residence Apartments Luca",
+      "hotelDescription": "Obiekt Residence Apartments Luca położony jest w miejscowości Podstrana, 800 metrów od rezydencji rodu Cindro oraz 900 metrów od portu Strožanac. Do dyspozycji Gości są apartamenty z bezpłatnym WiFi i widokiem na morze. Wszystkie apartamenty zapewniają widoki na basen i są wyposażone w telewizor z płaskim ekranem. Apartamenty oferują łazienkę, salon oraz taras. W każdym z nich znajduje się też doskonale wyposażona kuchnia ze zmywarką do naczyń, piekarnikiem i ekspresem do kawy."
+  }, 
+
+ "24": {
+      "priceStart": 770,
+      "auctionLength": 13500,
+      "hotelName": "Apartment Little House",
+      "hotelDescription": "Ten klimatyzowany apartament jest położony w miejscowości Mlini. Do dyspozycji Gości jest bezpłatne WiFi, wanna z hydromasażem oraz balkon. Od Dubrownika dzieli obiekt 9 km. Na miejscu dostępny jest bezpłatny prywatny parking.<br><br>Apartament obejmuje część wypoczynkową, jadalnię i kuchnię ze zmywarką. Obiekt oferuje zakwaterowanie bez wyżywienia. Pościel i ręczniki są zapewnione. Udogodnienia obejmują prywatną łazienkę z prysznicem."
+  }, 
+    
+ "25": {
+      "priceStart": 790,
+      "auctionLength": 12500,
+      "hotelName": "Apartments House Đurđica",
+      "hotelDescription": "Obiekt Apartments House Đurđica znajduje się w miejscowości Bol, 300 metrów od dworca autobusowego oraz winiarni Stina. W całym obiekcie można bezpłatnie korzystać z WiFi. Na miejscu dostępny jest też bezpłatny prywatny parking. Obiekt udostępnia swoim Gościom sprzęt do grillowania.<br><br>Promenada oddalona jest od obiektu Apartments House Đurđica o 500 metrów, a terminal katamaranów – o 600 metrów. Odległość od lotniska w Splicie wynosi 42 km. "
+  }, 
+    
+ "26": {
+      "priceStart": 730,
+      "auctionLength": 16500,
+      "hotelName": "Apartments Vlasic",
+      "hotelDescription": "Obiekt Apartments Vlasic położony jest w miejscowości Podstrana, 4 km od rezydencji rodu Cindro i portu Strozanac. Oferuje on widok na morze oraz bezpłatne WiFi.<br><br>Wszystkie apartamenty i studia są klimatyzowane. W każdym z nich znajduje się kuchnia z jadalnią, tosterem, lodówką, płytą kuchenną i ekspresem do kawy.<br><br>Na miejscu zapewniono sprzęt do grillowania."
+  },     
+
+ "27": {
+      "priceStart": 750,
+      "auctionLength": 14500,
+      "hotelName": "Hotel Ivan",
+      "hotelDescription": "Hotel Ivan mieści się w imponującym, czteropiętrowym budynku, usytuowanym w centrum miejscowości Bol na wyspie Brač, w środkowym rejonie Dalmacji. Hotel został otwarty w 2002 roku i dysponuje spa, które oferuje szeroki wybór zabiegów i masaży.<br><br>Wszystkie pokoje i apartamenty w tym urokliwym obiekcie są przestronne i nowocześnie wyposażone. Apartamenty dysponują niewielką kuchnią i balkonem."
+  },     
+    
+ "28": {
+      "priceStart": 560,
+      "auctionLength": 15000,
+      "hotelName": "Villa Tonina",
+      "hotelDescription": "Hotel Villa Tonina usytuowany jest 5 minut spacerem od plaży w zatoce Saldun na wyspie Ciovo i oferuje klimatyzowane apartamenty z balkonem z widokiem na morze. Do dyspozycji Gości jest bezpłatny parking.<br><br>Wszystkie apartamenty dysponują w pełni wyposażonym aneksem kuchennym oraz telewizją satelitarną. Goście mogą także skorzystać z miejsca na grilla w ogrodzie oraz pralni."
+  },
+    
+ "29": {
+      "priceStart": 600,
+      "auctionLength": 15500,
+      "hotelName": "Guesthouse Barica",
+      "hotelDescription": "Pensjonat Guesthouse Barica, z którego roztacza się panoramiczny widok na Morze Adriatyckie, oferuje odkryty basen oraz pokoje i apartamenty z bezpłatnym WiFi.<br><br>Wszystkie pokoje i apartamenty dysponują również balkonem, klimatyzacją, ogrzewaniem, lodówką oraz telewizorem z dostępem do kanałów satelitarnych. W apartamentach znajduje się ponadto kuchnia, jadalnia oraz część wypoczynkowa."
+  },   
+
+ "30": {
+      "priceStart": 740,
+      "auctionLength": 16000,
+      "hotelName": "Apartments Amor",
+      "hotelDescription": "Obiekt Apartments Amor położony jest w zacisznym miejscu przy plaży w miejscowości Seget Donji, 2 km na zachód od Trogiru. Oferuje on zakwaterowanie w apartamentach, które zapewniają bezpłatne WiFi i dysponują balkonem z widokiem na morze oraz w pełni wyposażoną kuchnią. Apartamenty są klimatyzowane i wyposażone w telewizor z dostępem do kanałów satelitarnych oraz odtwarzacz CD. "
+  }     
+}
+  
+  

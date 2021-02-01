@@ -5,6 +5,7 @@ const app = express();
 const dotenv = require('dotenv');
 const fetch = require('node-fetch');
 const db = require('./queries')
+var fs = require('fs');
 
 dotenv.config();
 
@@ -32,41 +33,78 @@ app.get('/navscreens/:version', db.getNavScreens)
  * GET to retrieve list of hotels
  */
 app.get("/hotels", function (req, response) {
-    let hotels_URL = process.env.REACT_APP_HOTELS_SOURCE
+    // ### Reading DATA from file
+    var obj;
+    fs.readFile('./auctions/hotels.json', 'utf8', function (err, data) {
+        if (err) response.json(err)//throw err;
+        obj = JSON.parse(data);
+        // console.log(obj)
 
-    fetch(hotels_URL)
-        .then(res => res.json())
-        .then(json => {
-            let hotels = [];
+        let hotels = [];
 
-            for (let [key, value] of Object.entries(json)) {
-                value["hotelId"] = parseInt(key)
-                hotels.push(value);
-            }
+        for (let [key, value] of Object.entries(obj)) {
+            value["hotelId"] = parseInt(key)
+            hotels.push(value);
+        }
 
-            response.json(hotels)
-        });
+        response.json(hotels)
+    });
+
+    // ### Fetching DATA
+    // let hotels_URL = process.env.REACT_APP_HOTELS_SOURCE
+
+    // fetch(hotels_URL)
+    //     .then(res => res.json())
+    //     .then(json => {
+    //         let hotels = [];
+
+    //         for (let [key, value] of Object.entries(json)) {
+    //             value["hotelId"] = parseInt(key)
+    //             hotels.push(value);
+    //         }
+
+    //         response.json(hotels)
+    //     });
 });
+
 
 
 /**
  * GET to retrieve list of hotels for tutorial
  */
 app.get("/hotels-tutorial", function (req, response) {
-    let hotels_URL = process.env.REACT_APP_HOTELS_TUTORIAL_SOURCE
+    // ### Reading DATA from file
+    var obj;
+    fs.readFile('./auctions/hotelstutorial.json', 'utf8', function (err, data) {
+        if (err) response.json(err)//throw err;
+        obj = JSON.parse(data);
+        // console.log(obj)
 
-    fetch(hotels_URL)
-        .then(res => res.json())
-        .then(json => {
-            let hotels = [];
+        let hotels = [];
 
-            for (let [key, value] of Object.entries(json)) {
-                value["hotelId"] = parseInt(key)
-                hotels.push(value);
-            }
+        for (let [key, value] of Object.entries(obj)) {
+            value["hotelId"] = parseInt(key)
+            hotels.push(value);
+        }
 
-            response.json(hotels)
-        });
+        response.json(hotels)
+    });
+
+    // ### Fetching DATA
+    // let hotels_URL = process.env.REACT_APP_HOTELS_TUTORIAL_SOURCE
+
+    // fetch(hotels_URL)
+    //     .then(res => res.json())
+    //     .then(json => {
+    //         let hotels = [];
+
+    //         for (let [key, value] of Object.entries(json)) {
+    //             value["hotelId"] = parseInt(key)
+    //             hotels.push(value);
+    //         }
+
+    //         response.json(hotels)
+    //     });
 
 });
 
@@ -74,21 +112,40 @@ app.get("/hotels-tutorial", function (req, response) {
  * GET to retrieve list of hotels in reverseMode
  */
 app.get("/hotels-rev", function (req, response) {
-    let hotels_URL = process.env.REACT_APP_HOTELS_REV_SOURCE
+    // ### Reading DATA from file
+    var obj;
+    fs.readFile('./auctions/hotels-rev.json', 'utf8', function (err, data) {
+        if (err) response.json(err)//throw err;
+        obj = JSON.parse(data);
+        // console.log(obj)
 
-    fetch(hotels_URL)
-        .then(res => res.json())
-        .then(json => {
-            const jsonSize = Object.keys(json).length
-            let hotels = [];
+        const jsonSize = Object.keys(obj).length
+        let hotels = [];
 
-            for (let [key, value] of Object.entries(json)) {
-                value["hotelId"] = jsonSize - (parseInt(key) - 1)
-                hotels.push(value);
-            }
+        for (let [key, value] of Object.entries(obj)) {
+            value["hotelId"] = jsonSize - (parseInt(key) - 1)
+            hotels.push(value);
+        }
 
-            response.json(hotels)
-        });
+        response.json(hotels)
+    });
+
+    // ### Fetching DATA
+    // let hotels_URL = process.env.REACT_APP_HOTELS_REV_SOURCE
+
+    // fetch(hotels_URL)
+    //     .then(res => res.json())
+    //     .then(json => {
+    //         const jsonSize = Object.keys(json).length
+    //         let hotels = [];
+
+    //         for (let [key, value] of Object.entries(json)) {
+    //             value["hotelId"] = jsonSize - (parseInt(key) - 1)
+    //             hotels.push(value);
+    //         }
+
+    //         response.json(hotels)
+    //     });
 });
 
 
