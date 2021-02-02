@@ -2,7 +2,6 @@
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
-const fetch = require('node-fetch');
 const db = require('./queries')
 const fromFile = require('./readFile')
 const cors = require('cors')
@@ -24,12 +23,10 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 /**
  * GET DATA
  */
-app.get('/userexpcount', db.getUserExperimentCount)
-app.get('/screens', db.getScreens)
 app.get('/versions', db.getVersions)
 app.get('/psform/:sex', db.getPSFormData)
 app.get('/apptext/:sex', db.getAppTextData)
-app.get('/navscreens/:version', db.getNavScreens)
+app.get('/inituserdata/:version', db.getUserInitialData)
 /**
  * GET to retrieve list of hotels
  */
@@ -40,10 +37,9 @@ app.get("/hotels-rev", fromFile.getHotelsRev);
 /**
  * SAVE DATA
  */
-app.post("/savepsform", db.createPSForm);
-app.post("/saveauctionbids", db.createAuctionBids);
-app.post("/savevisualpattern", db.createVisualPattern);
-app.post("/saveuserform", db.createUserForm);
-app.post("/saveuserinfo", db.createUserInfo);
-app.post("/saveuserlogtime", db.createUserLogTime);
-app.post("/saveusergeneraldata", db.createUserGeneraldata);
+app.post("/psform", db.createPSForm);
+app.post("/auctionbids", db.createAuctionBids);
+app.post("/visualpattern", db.createVisualPattern);
+app.post("/userinfo", db.createUserInfo);
+app.post("/userlogtime", db.createUserLogTime);
+app.post("/usergeneraldata", db.createUserGeneraldata);

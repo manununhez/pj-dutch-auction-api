@@ -12,22 +12,15 @@ const pool = new Pool({
     port: process.env.REACT_APP_DB_PORT,
 })
 
-const getScreens = (request, response) => {
-    pool.query('SELECT * FROM screens ORDER BY id ASC', (error, results) => {
-        if (error) {
-            throw error
-        }
-        response.status(200).json(results.rows)
-    })
-}
+const getUserInitialData = async (request, response) => {
+    const version = request.params.version
 
-const getUserExperimentCount = (request, response) => {
-    pool.query('SELECT * FROM user_experiment_count', (error, results) => {
-        if (error) {
-            throw error
-        }
-        response.status(200).json(results.rows)
-    })
+    const experimentCount = await pool.query('SELECT * FROM user_experiment_count')
+    const navScreens = await pool.query('SELECT s.name FROM screens_x_version sv, screens s, experiment_versions v WHERE sv.screen_id = s.id AND sv.version_id = v.id AND sv.version_id = (SELECT id FROM experiment_versions WHERE name = $1 ORDER BY sv.version_id, screen_order ASC)', [version])
+
+    const result = { experimentCount: experimentCount.rows, screens: navScreens.rows }
+    console.log(result)
+    response.status(200).json(result)
 }
 
 const getVersions = (request, response) => {
@@ -44,18 +37,6 @@ const getPSFormData = (request, response) => {
     console.log('getPSFormData')
     console.log(sex)
     pool.query('SELECT * FROM psform WHERE sex = $1 ORDER BY question_code ASC', [sex], (error, results) => {
-        if (error) {
-            throw error
-        }
-        response.status(200).json(results.rows)
-    })
-}
-
-const getNavScreens = (request, response) => {
-    const version = request.params.version
-    console.log('getNavScreens')
-    console.log(version)
-    pool.query('SELECT s.name FROM screens_x_version sv, screens s, experiment_versions v WHERE sv.screen_id = s.id AND sv.version_id = v.id AND sv.version_id = (SELECT id FROM experiment_versions WHERE name = $1 ORDER BY sv.version_id, screen_order ASC)', [version], (error, results) => {
         if (error) {
             throw error
         }
@@ -127,41 +108,22 @@ const createVisualPattern = (request, response) => {
     })
 }
 
-const createUserForm = (request, response) => {
-    const data = request.body
-    // console.log(request.body)
-    // console.log(data)
-
-    const query = format('INSERT INTO userform (user_id, ariadna_user_id, sex, age, profession, years_education, level_education, type_auction, version_task, experiment_completed, survey_finish_timestamp) VALUES %L Returning *', data);
-
-    console.log(query)
-
-    pool.query(query, (error, results) => {
-        if (error) {
-            throw error
-        }
-        console.log(`UserForm added  ${results.rowCount} rows`)
-        console.log(`UserForm added  ${results.rows} rows`)
-        response.status(201).send(`UserForm added ${results.rowCount} rows`)
-    })
-}
-
 const createUserInfo = (request, response) => {
-    const data = request.body
-    // console.log(request.body)
-    // console.log(data)
+    const { info, form } = request.body
 
-    const query = format('INSERT INTO userinfo (user_id, os_name, os_version, browser_name, browser_version, browser_major, browser_language, engine_name, engine_version, screen_width, screen_height, created_at) VALUES %L Returning *', data);
+    let query1 = format('INSERT INTO userinfo (user_id, os_name, os_version, browser_name, browser_version, browser_major, browser_language, engine_name, engine_version, screen_width, screen_height, created_at) VALUES %L Returning *;', info);
 
-    console.log(query)
+    let query2 = format('INSERT INTO userform (user_id, ariadna_user_id, sex, age, profession, years_education, level_education, type_auction, version_task, experiment_completed, survey_finish_timestamp) VALUES %L Returning *;', form);
 
-    pool.query(query, (error, results) => {
+    console.log(query1 + query2)
+
+    pool.query(query1 + query2, (error, results) => {
         if (error) {
             throw error
         }
-        console.log(`UserInfo added  ${results.rowCount} rows`)
-        console.log(`UserInfo added  ${results.rows} rows`)
-        response.status(201).send(`UserInfo added ${results.rowCount} rows`)
+        console.log(`UserInfo and UserForm added  ${results.rowCount} rows`)
+        console.log(`UserInfo and UserForm added  ${results.rows} rows`)
+        response.status(201).send(`UserInfo and UserForm added ${results.rowCount} rows`)
     })
 }
 
@@ -204,16 +166,15 @@ const createUserGeneraldata = (request, response) => {
 }
 
 module.exports = {
-    getScreens,
-    getUserExperimentCount,
+    getUserInitialData,
+    // getUserExperimentCount,
     getVersions,
     getPSFormData,
     getAppTextData,
-    getNavScreens,
+    // getNavScreens,
     createPSForm,
     createAuctionBids,
     createVisualPattern,
-    createUserForm,
     createUserInfo,
     createUserLogTime,
     createUserGeneraldata
