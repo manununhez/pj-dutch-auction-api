@@ -16,7 +16,7 @@ const getUserInitialData = async (request, response) => {
     const version = request.params.version
 
     const experimentCount = await pool.query('SELECT * FROM user_experiment_count')
-    const navScreens = await pool.query('SELECT s.name FROM screens_x_version sv, screens s, experiment_versions v WHERE sv.screen_id = s.id AND sv.version_id = v.id AND sv.version_id = (SELECT id FROM experiment_versions WHERE name = $1 ORDER BY sv.version_id, screen_order ASC)', [version])
+    const navScreens = await pool.query('SELECT s.name, s.type FROM screens_x_version sv, screens s, experiment_versions v WHERE sv.screen_id = s.id AND sv.version_id = v.id AND sv.version_id = (SELECT id FROM experiment_versions WHERE name = $1 ORDER BY sv.version_id, screen_order ASC)', [version])
 
     const result = { experimentCount: experimentCount.rows, screens: navScreens.rows }
     console.log(result)
