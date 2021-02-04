@@ -15,8 +15,8 @@ const pool = new Pool({
 const getUserInitialData = async (request, response) => {
     const version = request.params.version
 
-    const experimentCount = await pool.query('SELECT * FROM user_experiment_count')
-    const navScreens = await pool.query('SELECT s.name, s.type FROM screens_x_version sv, screens s, experiment_versions v WHERE sv.screen_id = s.id AND sv.version_id = v.id AND sv.version_id = (SELECT id FROM experiment_versions WHERE name = $1 ORDER BY sv.version_id, screen_order ASC)', [version])
+    const experimentCount = await pool.query('SELECT * FROM view_participants_count')
+    const navScreens = await pool.query('SELECT * FROM view_screens_x_version where version_name=$1', [version])
 
     const result = { experimentCount: experimentCount.rows, screens: navScreens.rows }
     console.log(result)
@@ -24,7 +24,7 @@ const getUserInitialData = async (request, response) => {
 }
 
 const getVersions = (request, response) => {
-    pool.query('SELECT * FROM experiment_versions ORDER BY id ASC', (error, results) => {
+    pool.query('SELECT * FROM view_experiment_versions', (error, results) => {
         if (error) {
             throw error
         }
@@ -34,9 +34,8 @@ const getVersions = (request, response) => {
 
 const getPSFormData = (request, response) => {
     const sex = request.params.sex
-    console.log('getPSFormData')
-    console.log(sex)
-    pool.query('SELECT * FROM psform WHERE sex = $1 ORDER BY question_code ASC', [sex], (error, results) => {
+
+    pool.query('SELECT * FROM view_psform WHERE sex = $1', [sex], (error, results) => {
         if (error) {
             throw error
         }
@@ -46,9 +45,8 @@ const getPSFormData = (request, response) => {
 
 const getAppTextData = (request, response) => {
     const sex = request.params.sex
-    console.log('getAppTextData')
-    console.log(sex)
-    pool.query('SELECT s.name, sv.sex, sv.font_size, sv.text FROM text_x_screens sv, screens s WHERE sv.screen_id = s.id AND sex = $1', [sex], (error, results) => {
+
+    pool.query('SELECT * from view_text_x_screens WHERE sex = $1', [sex], (error, results) => {
         if (error) {
             throw error
         }
@@ -58,10 +56,8 @@ const getAppTextData = (request, response) => {
 
 const createPSForm = (request, response) => {
     const data = request.body
-    // console.log(request.body)
-    // console.log(data)
 
-    pool.query(format('INSERT INTO userpsform (user_id, question_id, answer, created_at) VALUES %L Returning *', data), (error, results) => {
+    pool.query(format('INSERT INTO results_user_psform (user_id, question_id, answer) VALUES %L Returning *', data), (error, results) => {
         if (error) {
             throw error
         }
@@ -72,10 +68,8 @@ const createPSForm = (request, response) => {
 
 const createAuctionBids = (request, response) => {
     const data = request.body
-    // console.log(request.body)
-    // console.log(data)
 
-    const query = format('INSERT INTO userauctionbids (user_id, screen_name, hotel_id, hotel_name, price_start, bid, bid_start_timestamp, bid_stop_timestamp, created_at) VALUES %L Returning *', data)
+    const query = format('INSERT INTO results_user_auctions (user_id, screen_name, hotel_id, hotel_name, price_start, bid, bid_start_timestamp, bid_stop_timestamp) VALUES %L Returning *', data)
 
     console.log(query)
 
@@ -91,10 +85,8 @@ const createAuctionBids = (request, response) => {
 
 const createVisualPattern = (request, response) => {
     const data = request.body
-    // console.log(request.body)
-    // console.log(data)
 
-    const query = format('INSERT INTO uservisualpattern (user_id, screen_name, level, matrix_dimention, matrix, matrix_result, correct_tiles, incorrect_tiles, missing_tiles, retry, time_spent_in_screen, created_at) VALUES %L Returning *', data)
+    const query = format('INSERT INTO results_user_visualpattern (user_id, screen_name, level, matrix_dimention, matrix, matrix_result, correct_tiles, incorrect_tiles, missing_tiles, retry, time_spent_in_screen) VALUES %L Returning *', data)
 
     console.log(query)
 
@@ -111,9 +103,9 @@ const createVisualPattern = (request, response) => {
 const createUserInfo = (request, response) => {
     const { info, form } = request.body
 
-    let query1 = format('INSERT INTO userinfo (user_id, os_name, os_version, browser_name, browser_version, browser_major, browser_language, engine_name, engine_version, screen_width, screen_height, created_at) VALUES %L Returning *;', info);
+    let query1 = format('INSERT INTO results_user_info (user_id, os_name, os_version, browser_name, browser_version, browser_major, browser_language, engine_name, engine_version, screen_width, screen_height) VALUES %L Returning *;', info);
 
-    let query2 = format('INSERT INTO userform (user_id, ariadna_user_id, sex, age, profession, years_education, level_education, type_auction, version_task, experiment_completed, survey_finish_timestamp) VALUES %L Returning *;', form);
+    let query2 = format('INSERT INTO results_user_form (user_id, ariadna_user_id, sex, age, profession, years_education, level_education, type_auction, version_task) VALUES %L Returning *;', form);
 
     console.log(query1 + query2)
 
@@ -129,10 +121,8 @@ const createUserInfo = (request, response) => {
 
 const createUserLogTime = (request, response) => {
     const data = request.body
-    // console.log(request.body)
-    // console.log(data)
 
-    const query = format('INSERT INTO userlogtime (user_id, screen_name, timestamp, time_spent_in_screen, created_at) VALUES %L Returning *', data);
+    const query = format('INSERT INTO results_user_logtime (user_id, screen_name, timestamp, time_spent_in_screen) VALUES %L Returning *', data);
 
     console.log(query)
 
@@ -148,10 +138,8 @@ const createUserLogTime = (request, response) => {
 
 const createUserGeneraldata = (request, response) => {
     const data = request.body
-    // console.log(request.body)
-    // console.log(data)
 
-    const query = format('INSERT INTO usergeneraldata (column1, column2, column3, column4, column5, column6, column7,column8, column9, column10, column11, column12, column13, column14) VALUES %L Returning *', data);
+    const query = format('INSERT INTO results_user_general_data (column1, column2, column3, column4, column5, column6, column7,column8, column9, column10, column11, column12, column13) VALUES %L Returning *', data);
 
     console.log(query)
 
@@ -167,11 +155,9 @@ const createUserGeneraldata = (request, response) => {
 
 module.exports = {
     getUserInitialData,
-    // getUserExperimentCount,
     getVersions,
     getPSFormData,
     getAppTextData,
-    // getNavScreens,
     createPSForm,
     createAuctionBids,
     createVisualPattern,
