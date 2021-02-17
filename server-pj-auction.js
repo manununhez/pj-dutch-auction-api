@@ -5,11 +5,13 @@ const dotenv = require('dotenv');
 const db = require('./queries')
 const fromFile = require('./readFile')
 const cors = require('cors')
+var compression = require('compression')
 
 dotenv.config();
 
 const port = process.env.PORT || 5000;
 
+app.use(compression())
 app.use(cors()) //RESOLVE! Request header field Authorization is not allowed by Access-Control-Allow-Headers in preflight response
 app.use(express.json())
 app.use((req, res, next) => {

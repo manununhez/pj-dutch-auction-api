@@ -5,11 +5,11 @@ const format = require('pg-format');
 dotenv.config();
 
 const pool = new Pool({
-    user: process.env.REACT_APP_DB_USER,
-    host: process.env.REACT_APP_DB_HOST,
-    database: process.env.REACT_APP_DB_NAME,
-    password: process.env.REACT_APP_DB_PASSWORD,
-    port: process.env.REACT_APP_DB_PORT,
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT,
 })
 
 const getUserInitialData = async (request, response) => {
