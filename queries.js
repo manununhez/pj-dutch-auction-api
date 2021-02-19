@@ -19,7 +19,7 @@ const getUserInitialData = async (request, response) => {
     const navScreens = await pool.query('SELECT * FROM view_screens_x_version where version_name=$1', [version])
 
     const result = { experimentCount: experimentCount.rows, screens: navScreens.rows }
-    console.log(result)
+    // console.log(result)
     response.status(200).json(result)
 }
 
@@ -61,7 +61,7 @@ const createPSForm = (request, response) => {
         if (error) {
             throw error
         }
-        console.log(`UserPSForm added ${results.rowCount} rows`)
+        // console.log(`UserPSForm added ${results.rowCount} rows`)
         response.status(201).send(`UserPSForm added ${results.rowCount} rows`)
     })
 }
@@ -71,14 +71,14 @@ const createAuctionBids = (request, response) => {
 
     const query = format('INSERT INTO results_user_auctions (user_id, screen_name, hotel_id, hotel_name, price_start, bid, bid_start_timestamp, bid_stop_timestamp) VALUES %L Returning *', data)
 
-    console.log(query)
+    // console.log(query)
 
     pool.query(query, (error, results) => {
         if (error) {
             throw error
         }
-        console.log(`UserAuctionBids added  ${results.rowCount} rows`)
-        console.log(`UserAuctionBids added  ${results.rows} rows`)
+        // console.log(`UserAuctionBids added  ${results.rowCount} rows`)
+        // console.log(`UserAuctionBids added  ${results.rows} rows`)
         response.status(201).send(`UserAuctionBids added ${results.rowCount} rows`)
     })
 }
@@ -88,14 +88,14 @@ const createVisualPattern = (request, response) => {
 
     const query = format('INSERT INTO results_user_visualpattern (user_id, screen_name, level, matrix_dimention, matrix, matrix_result, correct_tiles, incorrect_tiles, missing_tiles, retry, time_spent_in_screen) VALUES %L Returning *', data)
 
-    console.log(query)
+    // console.log(query)
 
     pool.query(query, (error, results) => {
         if (error) {
             throw error
         }
-        console.log(`UserVisualPattern added  ${results.rowCount} rows`)
-        console.log(`UserVisualPattern added  ${results.rows} rows`)
+        // console.log(`UserVisualPattern added  ${results.rowCount} rows`)
+        // console.log(`UserVisualPattern added  ${results.rows} rows`)
         response.status(201).send(`UserVisualPattern added ${results.rowCount} rows`)
     })
 }
@@ -107,14 +107,14 @@ const createUserInfo = (request, response) => {
 
     let query2 = format('INSERT INTO results_user_form (user_id, ariadna_user_id, sex, age, profession, years_education, level_education, type_auction, version_task) VALUES %L Returning *;', form);
 
-    console.log(query1 + query2)
+    // console.log(query1 + query2)
 
     pool.query(query1 + query2, (error, results) => {
         if (error) {
             throw error
         }
-        console.log(`UserInfo and UserForm added  ${results.rowCount} rows`)
-        console.log(`UserInfo and UserForm added  ${results.rows} rows`)
+        // console.log(`UserInfo and UserForm added  ${results.rowCount} rows`)
+        // console.log(`UserInfo and UserForm added  ${results.rows} rows`)
         response.status(201).send(`UserInfo and UserForm added ${results.rowCount} rows`)
     })
 }
@@ -124,14 +124,14 @@ const createUserLogTime = (request, response) => {
 
     const query = format('INSERT INTO results_user_logtime (user_id, screen_name, timestamp, time_spent_in_screen) VALUES %L Returning *', data);
 
-    console.log(query)
+    // console.log(query)
 
     pool.query(query, (error, results) => {
         if (error) {
             throw error
         }
-        console.log(`UserLog added  ${results.rowCount} rows`)
-        console.log(`UserLog added  ${results.rows} rows`)
+        // console.log(`UserLog added  ${results.rowCount} rows`)
+        // console.log(`UserLog added  ${results.rows} rows`)
         response.status(201).send(`UserLog added ${results.rowCount} rows`)
     })
 }
@@ -141,14 +141,14 @@ const createUserGeneraldata = (request, response) => {
 
     const query = format('INSERT INTO results_user_general_data (column1, column2, column3, column4, column5, column6, column7,column8, column9, column10, column11, column12, column13) VALUES %L Returning *', data);
 
-    console.log(query)
+    // console.log(query)
 
     pool.query(query, (error, results) => {
         if (error) {
             throw error
         }
-        console.log(`UserGeneraldata added  ${results.rowCount} rows`)
-        console.log(`UserGeneraldata added  ${results.rows} rows`)
+        // console.log(`UserGeneraldata added  ${results.rowCount} rows`)
+        // console.log(`UserGeneraldata added  ${results.rows} rows`)
         response.status(201).send(`UserGeneraldata added ${results.rowCount} rows`)
     })
 }
