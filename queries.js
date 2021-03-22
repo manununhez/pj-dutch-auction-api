@@ -69,7 +69,7 @@ const createPSForm = (request, response) => {
 const createAuctionBids = (request, response) => {
     const data = request.body
 
-    const query = format('INSERT INTO results_user_auctions (user_id, screen_name, hotel_id, hotel_name, price_start, bid, bid_start_timestamp, bid_stop_timestamp) VALUES %L Returning *', data)
+    const query = format('INSERT INTO results_user_auctions (user_id, screen_name, bid_order, hotel_id, hotel_name, price_start, bid, bid_start_timestamp, bid_stop_timestamp, spacebar_pressed) VALUES %L Returning *', data)
 
     // console.log(query)
 
